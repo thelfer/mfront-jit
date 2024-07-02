@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(TFELMFront REQUIRED HINTS "${TFEL_DIR}/share/tfel/cmake")
 
+add_subdirectory(include)
 add_subdirectory(src)
