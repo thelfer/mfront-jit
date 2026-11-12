@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 option(generate_documentation "generate the documentation of the library" OFF)
 include(cmake/dependencies.cmake)
+#
 add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(docs)
