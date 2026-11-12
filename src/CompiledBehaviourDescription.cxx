@@ -1,6 +1,6 @@
 /*!
  * \file   src/CompiledBehaviourDescription.cxx
- * \brief    
+ * \brief  This file defines the getCompiledBehaviourDescription function.
  * \author Thomas Helfer
  * \date   03/06/2024
  */
@@ -11,7 +11,7 @@
 #include "MFront/AbstractBehaviourInterface.hxx"
 #include "MFrontJIT/CompiledBehaviourDescription.hxx"
 
-namespace mfront::jit{
+namespace mfront::jit {
 
   CompiledBehaviourDescription getCompiledBehaviourDescription(
       std::string_view mfront_path,
@@ -92,4 +92,4 @@ namespace mfront::jit{
         .external_state_variables = bdata.getExternalStateVariables()};
   }  // end of getCompiledBehaviourDescription
 
-} // end of namespace mfront::jit
+}  // end of namespace mfront::jit
