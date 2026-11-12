@@ -56,8 +56,11 @@ namespace mfront::jit {
       const auto& bis = bdsl->getBehaviourInterfaces();
       if (!bis.contains(options.interface)) {
         tfel::raise(
-            "getCompiledBehaviourDescription: internal error "
-            "while treating path '" +
+            "getCompiledBehaviourDescription: internal error: the "
+            "interface '" +
+            options.interface +
+            "' is not declared by the domain specific language used "
+            "to treat '" +
             mpath + "'");
       }
       return *(bis.at(options.interface));
