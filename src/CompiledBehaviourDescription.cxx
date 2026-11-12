@@ -44,6 +44,13 @@ namespace mfront::jit{
     bdsl->setInterfaces({options.interface});
     bdsl->analyseFile(mpath, options.ecmds, options.substitutions);
     // building the list of material properties
+    //
+    // The reference returned below is taken in the map given by
+    // getBehaviourInterfaces, which does not live beyond this statement.
+    // There is no lifetime issue: this map shares the ownership of the
+    // interfaces with the domain specific language, which registered them
+    // for its own lifetime, so an interface lives as long as bdsl, which
+    // outlives the last use of bi in this function.
     const auto& bi = [&mpath, &bdsl,
                       &options]() -> AbstractBehaviourInterface& {
       const auto& bis = bdsl->getBehaviourInterfaces();
